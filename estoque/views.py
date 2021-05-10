@@ -26,7 +26,7 @@ def estoque_entrada_add(request):
         form=EstoqueItensForm,
         extra=0,
         min_num=1,
-        validate_min=True
+        validate_min=True,
     )
     if request.method == 'POST':
         form = EstoqueForm(request.POST, instance=estoque_form, prefix='main')
