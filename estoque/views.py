@@ -2,7 +2,7 @@ from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, resolve_url
 from produto.models import Produto
-from .models import EstoqueEntrada, EstoqueSaida, EstoqueItens
+from .models import Estoque, EstoqueEntrada, EstoqueSaida, EstoqueItens
 from .forms import EstoqueForm, EstoqueItensForm
 
 
@@ -29,7 +29,7 @@ def dar_baixa_estoque(form):
 
 def estoque_entrada_add(request):
     template_name = 'estoque_entrada_form.html'
-    estoque_form = EstoqueEntrada()
+    estoque_form = Estoque()
     item_estoque_formset = inlineformset_factory(
         EstoqueEntrada,
         EstoqueItens,
